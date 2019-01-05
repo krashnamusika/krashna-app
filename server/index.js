@@ -3,6 +3,7 @@ import cors from 'cors'
 import bodyParser from 'body-parser'
 import logger from 'morgan'
 import passport from 'passport'
+import { limitLoginAttempts } from './config/rateLimit'
 import configureRoutes from './routes'
 
 require('dotenv').config()
@@ -13,6 +14,8 @@ const app = express()
 
 require('./config/mongodb')
 require('./config/passport')
+
+limitLoginAttempts(app)
 
 app.use(cors())
 app.use(bodyParser.urlencoded({ extended: false }))
