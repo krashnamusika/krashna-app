@@ -115,7 +115,7 @@ class Login extends React.Component {
                     {showError && (
                         <div>
                             <p>
-                                That username or password isn't recognized.
+                                That email address or password isn't recognized.
                                 Please try again or register now.
                             </p>
                         </div>

@@ -1,0 +1,2 @@
+export const BCRYPT_SALT_ROUNDS = 12
+export const NUM_RANDOM_BYTES_IN_TOKEN = 20

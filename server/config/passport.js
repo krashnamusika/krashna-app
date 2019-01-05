@@ -3,9 +3,7 @@ import passport from 'passport'
 import jwtStrategy from 'passport-jwt'
 import localStrategy from 'passport-local'
 import User from '../models/User'
-import validEmails from '../valid-emails.json'
-
-const BCRYPT_SALT_ROUNDS = 12
+import { BCRYPT_SALT_ROUNDS } from './authSettings'
 
 passport.serializeUser(function(user, done) {
     done(null, user.email)
@@ -27,9 +25,7 @@ passport.use(
             session: false,
         },
         (req, email, password, done) => {
-            console.log(validEmails)
-            console.log(email)
-            if (validEmails.indexOf(email) === -1) {
+            if (require('../valid-emails.json').indexOf(email) === -1) {
                 console.log('Email not known with admins')
                 return done(null, false, {
                     message: 'Email not known with admins',
