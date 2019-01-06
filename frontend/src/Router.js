@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
-import { Switch, Route } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import ForgotPassword from './containers/ForgotPassword'
 import Home from './containers/Home'
-import Register from './containers/Register'
 import Login from './containers/Login'
+import NotFound from './containers/NotFound'
 import protectContainer from './containers/protectContainer'
+import Register from './containers/Register'
 import ResetPassword from './containers/ResetPassword'
 
 class Router extends Component {
@@ -27,6 +28,7 @@ class Router extends Component {
                     {protectContainer(
                         <Route exact path="/" component={Home} />
                     )}
+                    <Route component={NotFound} />
                 </Switch>
             </div>
         )

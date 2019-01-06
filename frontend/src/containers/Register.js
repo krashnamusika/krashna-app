@@ -41,7 +41,7 @@ class Register extends React.Component {
         })
     }
 
-    registerUser(e) {
+    registerUser = e => {
         e.preventDefault()
         axios
             .post('/api/register', {
@@ -96,10 +96,7 @@ class Register extends React.Component {
         } else {
             return (
                 <CentralPaper headerIcon={<LockIcon />} title="Register">
-                    <form
-                        className={classes.form}
-                        onSubmit={this.registerUser.bind(this)}
-                    >
+                    <form className={classes.form} onSubmit={this.registerUser}>
                         <FormControl margin="normal" required fullWidth>
                             <InputLabel htmlFor="firstName">
                                 First Name

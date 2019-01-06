@@ -40,7 +40,7 @@ class Login extends React.Component {
         })
     }
 
-    loginUser(e) {
+    loginUser = e => {
         e.preventDefault()
         axios
             .post('/api/login', {
@@ -53,6 +53,7 @@ class Login extends React.Component {
                         showError: true,
                     })
                 } else {
+                    console.log(response.data.token)
                     localStorage.setItem('JWT', response.data.token)
                     this.setState({
                         loggedIn: true,
@@ -74,10 +75,7 @@ class Login extends React.Component {
         } else {
             return (
                 <CentralPaper headerIcon={<LockIcon />} title="Login">
-                    <form
-                        className={classes.form}
-                        onSubmit={this.loginUser.bind(this)}
-                    >
+                    <form className={classes.form} onSubmit={this.loginUser}>
                         <FormControl margin="normal" required fullWidth>
                             <InputLabel htmlFor="email">
                                 Email Address

@@ -36,7 +36,7 @@ class ForgotPassword extends React.Component {
         })
     }
 
-    sendEmail(e) {
+    sendEmail = e => {
         e.preventDefault()
         if (this.state.email === '') {
             this.setState({
@@ -74,10 +74,7 @@ class ForgotPassword extends React.Component {
 
         return (
             <CentralPaper headerIcon={<EmailIcon />} title="Forgot Password">
-                <form
-                    className={classes.form}
-                    onSubmit={this.sendEmail.bind(this)}
-                >
+                <form className={classes.form} onSubmit={this.sendEmail}>
                     <FormControl margin="normal" required fullWidth>
                         <InputLabel htmlFor="email">Email Address</InputLabel>
                         <Input

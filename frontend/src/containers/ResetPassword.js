@@ -74,7 +74,7 @@ class ResetPassword extends React.Component {
             })
     }
 
-    updatePassword(e) {
+    updatePassword = e => {
         e.preventDefault()
         if (this.state.email === '') {
             this.setState({
@@ -153,7 +153,7 @@ class ResetPassword extends React.Component {
                 <CentralPaper headerIcon={<EmailIcon />} title="Reset Password">
                     <form
                         className={classes.form}
-                        onSubmit={this.updatePassword.bind(this)}
+                        onSubmit={this.updatePassword}
                     >
                         <FormControl margin="normal" required fullWidth>
                             <InputLabel htmlFor="password">Password</InputLabel>
