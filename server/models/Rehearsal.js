@@ -14,7 +14,6 @@ const rehearsalSchema = new Schema({
     withSoloist: { type: 'Boolean' },
     ledBy: { type: 'String' },
     location: { type: 'String' },
-    project: { type: 'ObjectId', ref: 'Project', required: true },
     parts: [{ type: 'ObjectId', ref: 'RehearsalPart' }],
 })
 
