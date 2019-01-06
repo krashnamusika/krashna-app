@@ -9,7 +9,7 @@ import { Link, withRouter } from 'react-router-dom'
 
 const DrawerItem = ({ title, url, icon, pathname }) => (
     <ListItem button component={Link} to={url} selected={pathname === url}>
-        <ListItemIcon>{icon}</ListItemIcon>
+        <ListItemIcon style={{ marginLeft: 8 }}>{icon}</ListItemIcon>
         <ListItemText primary={title} />
     </ListItem>
 )
