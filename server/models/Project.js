@@ -1,15 +1,13 @@
 import mongoose from 'mongoose'
-import pieceSchema from './Piece'
-import rehearsalSchema from './Rehearsal'
-import concertSchema from './Concert'
 
 const Schema = mongoose.Schema
 
 const projectSchema = new Schema({
     name: { type: 'String', required: true },
-    pieces: [pieceSchema],
-    rehearsals: rehearsalSchema,
-    concerts: [concertSchema],
+    isActive: { type: 'Boolean', required: true },
+    pieces: [{ type: 'ObjectId', ref: 'Piece' }],
+    rehearsals: [{ type: 'ObjectId', ref: 'Rehearsal' }],
+    concerts: [{ type: 'ObjectId', ref: 'Concert' }],
 })
 
 export default mongoose.model('Project', projectSchema, 'projects')

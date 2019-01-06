@@ -23,8 +23,8 @@ const DrawerList = ({ location }) => (
             pathname={location.pathname}
         />
         <DrawerItem
-            title="Rehearsals"
-            url="/rehearsals"
+            title="Schedule"
+            url="/schedule"
             icon={<MusicNoteIcon />}
             pathname={location.pathname}
         />

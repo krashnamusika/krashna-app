@@ -35,7 +35,7 @@ const styles = theme => ({
     },
 })
 
-class AddMusicalSkillForm extends React.Component {
+class AddSectionForm extends React.Component {
     constructor(props) {
         super(props)
 
@@ -152,4 +152,4 @@ class AddMusicalSkillForm extends React.Component {
     }
 }
 
-export default withStyles(styles)(AddMusicalSkillForm)
+export default withStyles(styles)(AddSectionForm)

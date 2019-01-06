@@ -1,9 +1,9 @@
 import React from 'react'
 import LoggedInPage from '../components/LoggedInPage'
-import AddMusicalSkillForm from '../components/rehearsals/AddMusicalSkillForm'
+import AddSectionForm from '../components/rehearsals/AddSectionForm'
 
 export default () => (
     <LoggedInPage title="Home">
-        <AddMusicalSkillForm />
+        <AddSectionForm />
     </LoggedInPage>
 )

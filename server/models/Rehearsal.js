@@ -15,6 +15,7 @@ const rehearsalSchema = new Schema({
     ledBy: { type: 'String' },
     location: { type: 'String' },
     project: { type: 'ObjectId', ref: 'Project', required: true },
+    parts: [{ type: 'ObjectId', ref: 'RehearsalPart' }],
 })
 
 export default mongoose.model('Rehearsal', rehearsalSchema, 'rehearsals')

@@ -53,7 +53,7 @@ passport.use(
                                 lastName: req.body.lastName,
                                 email,
                                 password: hashedPassword,
-                                permissionLevel: 'MEMBER',
+                                permissionLevels: ['MEMBER'],
                             }).then(user => {
                                 console.log('User registered')
                                 return done(null, user, {
