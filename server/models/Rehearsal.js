@@ -12,8 +12,6 @@ const rehearsalSchema = new Schema({
     isRehearsalDay: { type: 'Boolean' },
     isInConcertClothing: { type: 'Boolean' },
     withSoloist: { type: 'Boolean' },
-    ledBy: { type: 'String' },
-    location: { type: 'String' },
     parts: [{ type: 'ObjectId', ref: 'RehearsalPart' }],
 })
 
