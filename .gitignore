@@ -26,3 +26,5 @@ HELP.md
 node_modules/
 
 config.properties
+
+.DS_Store
