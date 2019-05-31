@@ -1,4 +1,7 @@
-import {RECEIVE_CURRENT_USER, REQUEST_CURRENT_USER} from "../actions/currentUser";
+import {
+    RECEIVE_CURRENT_USER,
+    REQUEST_CURRENT_USER,
+} from '../actions/currentUser'
 
 const initialState = {
     loaded: false,

@@ -8,7 +8,7 @@ import RepertoireIcon from '@material-ui/icons/LibraryMusic'
 import HomeIcon from '@material-ui/icons/Home'
 import React from 'react'
 import { Link, withRouter } from 'react-router-dom'
-import withCurrentUser from "../containers/withCurrentUser";
+import withCurrentUser from '../containers/withCurrentUser'
 
 const DrawerItem = ({ title, url, icon, pathname }) => (
     <ListItem button component={Link} to={url} selected={pathname === url}>
@@ -31,42 +31,45 @@ const DrawerList = ({ location, currentUser }) => (
             icon={<MusicNoteIcon />}
             pathname={location.pathname}
         />
-        {currentUser.loaded && currentUser.user.authorities.some(a => a.id === "SCHEDULER") && (
-            <DrawerItem
-                title="Manage Schedule"
-                url="/schedule/manage"
-                icon={<MusicNoteIcon />}
-                pathname={location.pathname}
-            />
-        )}
+        {currentUser.loaded &&
+            currentUser.user.authorities.some(a => a.id === 'SCHEDULER') && (
+                <DrawerItem
+                    title="Manage Schedule"
+                    url="/schedule/manage"
+                    icon={<MusicNoteIcon />}
+                    pathname={location.pathname}
+                />
+            )}
         <DrawerItem
             title="Repertoire"
             url="/repertoire"
             icon={<RepertoireIcon />}
             pathname={location.pathname}
         />
-        {currentUser.loaded && currentUser.user.authorities.some(a => a.id === "SCHEDULER") && (
-            <DrawerItem
-                title="Manage Repertoire"
-                url="/repertoire/manage"
-                icon={<RepertoireIcon />}
-                pathname={location.pathname}
-            />
-        )}
+        {currentUser.loaded &&
+            currentUser.user.authorities.some(a => a.id === 'SCHEDULER') && (
+                <DrawerItem
+                    title="Manage Repertoire"
+                    url="/repertoire/manage"
+                    icon={<RepertoireIcon />}
+                    pathname={location.pathname}
+                />
+            )}
         <DrawerItem
             title="Members"
             url="/members"
             icon={<PeopleIcon />}
             pathname={location.pathname}
         />
-        {currentUser.loaded && currentUser.user.authorities.some(a => a.id === "ADMIN") && (
-            <DrawerItem
-                title="Manage Members"
-                url="/members/manage"
-                icon={<PeopleIcon />}
-                pathname={location.pathname}
-            />
-        )}
+        {currentUser.loaded &&
+            currentUser.user.authorities.some(a => a.id === 'ADMIN') && (
+                <DrawerItem
+                    title="Manage Members"
+                    url="/members/manage"
+                    icon={<PeopleIcon />}
+                    pathname={location.pathname}
+                />
+            )}
     </List>
 )
 

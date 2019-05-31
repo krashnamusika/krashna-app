@@ -2,7 +2,5 @@ import React from 'react'
 import LoggedInPage from '../../components/LoggedInPage'
 
 export default () => (
-    <LoggedInPage title="Repertoire">
-        The repertoire
-    </LoggedInPage>
+    <LoggedInPage title="Repertoire">The repertoire</LoggedInPage>
 )

@@ -8,10 +8,10 @@ import NotFound from './pages/NotFound'
 import protectPage from './pages/protectPage'
 import Register from './pages/auth/Register'
 import ResetPassword from './pages/auth/ResetPassword'
-import Schedule from "./pages/schedule/Schedule";
-import ManageSchedule from "./pages/schedule/ManageSchedule";
-import Members from "./pages/members/Members";
-import ManageMembers from "./pages/members/ManageMembers";
+import Schedule from './pages/schedule/Schedule'
+import ManageSchedule from './pages/schedule/ManageSchedule'
+import Members from './pages/members/Members'
+import ManageMembers from './pages/members/ManageMembers'
 
 class Router extends Component {
     render() {
@@ -30,9 +30,7 @@ class Router extends Component {
                         path="/reset-password"
                         component={ResetPassword}
                     />
-                    {protectPage(
-                        <Route exact path="/" component={Home} />
-                    )}
+                    {protectPage(<Route exact path="/" component={Home} />)}
                     {protectPage(
                         <Route exact path="/profile" component={Profile} />
                     )}
@@ -40,19 +38,31 @@ class Router extends Component {
                         <Route exact path="/schedule" component={Schedule} />
                     )}
                     {protectPage(
-                        <Route exact path="/schedule/manage" component={ManageSchedule} />
+                        <Route
+                            exact
+                            path="/schedule/manage"
+                            component={ManageSchedule}
+                        />
                     )}
                     {protectPage(
                         <Route exact path="/repertoire" component={Schedule} />
                     )}
                     {protectPage(
-                        <Route exact path="/repertoire/manage" component={ManageSchedule} />
+                        <Route
+                            exact
+                            path="/repertoire/manage"
+                            component={ManageSchedule}
+                        />
                     )}
                     {protectPage(
                         <Route exact path="/members" component={Members} />
                     )}
                     {protectPage(
-                        <Route exact path="/members/manage" component={ManageMembers} />
+                        <Route
+                            exact
+                            path="/members/manage"
+                            component={ManageMembers}
+                        />
                     )}
                     <Route component={NotFound} />
                 </Switch>

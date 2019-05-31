@@ -33,6 +33,9 @@ const styles = theme => ({
         margin: theme.spacing(1),
         minWidth: 200,
     },
+    selectEmpty: {
+        marginTop: theme.spacing(2),
+    },
 })
 
 class AddSectionForm extends React.Component {
@@ -72,7 +75,7 @@ class AddSectionForm extends React.Component {
         return (
             <form className={classes.root} autoComplete="off">
                 <FormControl className={classes.formControl}>
-                    <InputLabel htmlFor="orchestraChoir">
+                    <InputLabel shrink htmlFor="orchestraChoir">
                         Orchestra or Choir
                     </InputLabel>
                     <Select
@@ -80,6 +83,7 @@ class AddSectionForm extends React.Component {
                         onChange={this.handleChange}
                         name="orchestraChoir"
                         id="orchestraChoir"
+                        className={classes.selectEmpty}
                     >
                         <MenuItem value="">
                             <em>None</em>
@@ -96,7 +100,7 @@ class AddSectionForm extends React.Component {
                         className={classes.formControl}
                         disabled={this.state.orchestraChoir === ''}
                     >
-                        <InputLabel htmlFor="sectionGroup">
+                        <InputLabel shrink htmlFor="sectionGroup">
                             Section Group
                         </InputLabel>
                         <Select
@@ -104,6 +108,7 @@ class AddSectionForm extends React.Component {
                             onChange={this.handleChange}
                             name="sectionGroup"
                             id="sectionGroup"
+                            className={classes.selectEmpty}
                         >
                             <MenuItem value="">
                                 <em>None</em>
@@ -127,12 +132,15 @@ class AddSectionForm extends React.Component {
                                 this.state.sectionGroup === ''
                             }
                         >
-                            <InputLabel htmlFor="section">Section</InputLabel>
+                            <InputLabel shrink htmlFor="section">
+                                Section
+                            </InputLabel>
                             <Select
                                 value={this.state.section}
                                 onChange={this.handleChange}
                                 name="section"
                                 id="section"
+                                className={classes.selectEmpty}
                             >
                                 <MenuItem value="">
                                     <em>None</em>

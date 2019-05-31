@@ -3,11 +3,11 @@ import FormControl from '@material-ui/core/FormControl/index'
 import Input from '@material-ui/core/Input/index'
 import InputLabel from '@material-ui/core/InputLabel/index'
 import withStyles from '@material-ui/core/styles/withStyles'
-import {CheckCircle} from '@material-ui/icons/index'
+import { CheckCircle } from '@material-ui/icons/index'
 import LockIcon from '@material-ui/icons/LockOutlined'
 import axios from 'axios/index'
 import React from 'react'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import CentralPaper from '../../components/CentralPaper'
 
 const styles = theme => ({
@@ -57,7 +57,7 @@ class Register extends React.Component {
                     invalidEmailError: false,
                 })
 
-                window.location.href = "/login"
+                window.location.href = '/login'
             })
             .catch(error => {
                 if (error.response.status === 422) {
@@ -80,7 +80,7 @@ class Register extends React.Component {
         if (messageFromServer === 'User registered') {
             return (
                 <CentralPaper
-                    headerIcon={<CheckCircle/>}
+                    headerIcon={<CheckCircle />}
                     title="Registration Successful"
                 >
                     <Button component={Link} to="/login" color="primary">
@@ -90,7 +90,7 @@ class Register extends React.Component {
             )
         } else {
             return (
-                <CentralPaper headerIcon={<LockIcon/>} title="Register">
+                <CentralPaper headerIcon={<LockIcon />} title="Register">
                     <form className={classes.form} onSubmit={this.registerUser}>
                         <FormControl margin="normal" required fullWidth>
                             <InputLabel htmlFor="firstName">

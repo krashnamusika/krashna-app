@@ -9,7 +9,7 @@ import LoadingIcon from '@material-ui/icons/MoreHoriz'
 import axios from 'axios/index'
 import queryString from 'query-string/index'
 import React from 'react'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import CentralPaper from '../../components/CentralPaper'
 
 const styles = theme => ({
@@ -57,7 +57,6 @@ class ResetPassword extends React.Component {
                     isLoading: false,
                     error: false,
                 })
-
             })
             .catch(error => {
                 this.setState({
@@ -95,12 +94,12 @@ class ResetPassword extends React.Component {
 
     render() {
         const classes = this.props.classes
-        const {error, isLoading, updated} = this.state
+        const { error, isLoading, updated } = this.state
 
         if (error) {
             return (
                 <CentralPaper
-                    headerIcon={<ErrorIcon/>}
+                    headerIcon={<ErrorIcon />}
                     title="Reset Password Failed"
                 >
                     <p>
@@ -119,7 +118,7 @@ class ResetPassword extends React.Component {
                     </Button>
                     <a
                         href="mailto:webcie@krashna.nl"
-                        style={{width: '100%'}}
+                        style={{ width: '100%' }}
                     >
                         <Button
                             className={classes.register}
@@ -133,16 +132,18 @@ class ResetPassword extends React.Component {
                 </CentralPaper>
             )
         } else if (isLoading) {
-            return <CentralPaper headerIcon={<LoadingIcon/>} title="Loading"/>
+            return <CentralPaper headerIcon={<LoadingIcon />} title="Loading" />
         } else {
             return (
-                <CentralPaper headerIcon={<EmailIcon/>} title="Reset Password">
+                <CentralPaper headerIcon={<EmailIcon />} title="Reset Password">
                     <form
                         className={classes.form}
                         onSubmit={this.updatePassword}
                     >
                         <FormControl margin="normal" required fullWidth>
-                            <InputLabel htmlFor="password">New Password</InputLabel>
+                            <InputLabel htmlFor="password">
+                                New Password
+                            </InputLabel>
                             <Input
                                 name="password"
                                 type="password"

@@ -9,19 +9,23 @@
         "classnames": "^2.2.6",
         "jwt-decode": "^2.2.0",
         "material-ui-pickers": "^2.0.5",
+        "prettier": "^1.17.1",
         "query-string": "^6.2.0",
         "react": "^16.7.0",
         "react-dom": "^16.7.0",
         "react-redux": "^7.0.3",
         "react-router-dom": "^5.0.0",
         "react-scripts": "3.0.1",
-        "redux": "^4.0.1"
+        "redux": "^4.0.1",
+        "redux-logger": "^3.0.6",
+        "redux-saga": "^1.0.2"
     },
     "scripts": {
         "start": "react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test",
-        "eject": "react-scripts eject"
+        "eject": "react-scripts eject",
+        "format": "prettier --write \"**/*.js\""
     },
     "eslintConfig": {
         "extends": "react-app"

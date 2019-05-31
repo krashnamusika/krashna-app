@@ -6,7 +6,7 @@ import withStyles from '@material-ui/core/styles/withStyles'
 import EmailIcon from '@material-ui/icons/EmailRounded'
 import axios from 'axios/index'
 import React from 'react'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import CentralPaper from '../../components/CentralPaper'
 
 const styles = theme => ({
@@ -63,10 +63,10 @@ class ForgotPassword extends React.Component {
 
     render() {
         const classes = this.props.classes
-        const {showError, messageSent} = this.state
+        const { showError, messageSent } = this.state
 
         return (
-            <CentralPaper headerIcon={<EmailIcon/>} title="Forgot Password">
+            <CentralPaper headerIcon={<EmailIcon />} title="Forgot Password">
                 <form className={classes.form} onSubmit={this.sendEmail}>
                     <FormControl margin="normal" required fullWidth>
                         <InputLabel htmlFor="email">Email Address</InputLabel>
@@ -94,7 +94,8 @@ class ForgotPassword extends React.Component {
                     <div>
                         <p>
                             <strong>
-                                That email address isn't recognized. Please try again or register now.
+                                That email address isn't recognized. Please try
+                                again or register now.
                             </strong>
                         </p>
                     </div>
@@ -103,7 +104,8 @@ class ForgotPassword extends React.Component {
                     <div>
                         <p>
                             <strong>
-                                Password reset email sent successfully! Check your mail for the reset link.
+                                Password reset email sent successfully! Check
+                                your mail for the reset link.
                             </strong>
                         </p>
                     </div>

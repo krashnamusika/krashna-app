@@ -6,7 +6,7 @@ import withStyles from '@material-ui/core/styles/withStyles'
 import LockIcon from '@material-ui/icons/LockOutlined'
 import axios from 'axios/index'
 import React from 'react'
-import {Link, Redirect} from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import CentralPaper from '../../components/CentralPaper'
 
 const styles = theme => ({
@@ -48,7 +48,7 @@ class Login extends React.Component {
             })
             .then(response => {
                 localStorage.setItem('JWT', response.headers.authorization)
-                this.props.history.push("/")
+                this.props.history.push('/')
             })
             .catch(error => {
                 this.setState({
@@ -59,13 +59,13 @@ class Login extends React.Component {
 
     render() {
         const classes = this.props.classes
-        const {showError} = this.state
+        const { showError } = this.state
 
         if (localStorage.getItem('JWT') === null) {
-            return <Redirect to="/"/>
+            return <Redirect to="/" />
         } else {
             return (
-                <CentralPaper headerIcon={<LockIcon/>} title="Login">
+                <CentralPaper headerIcon={<LockIcon />} title="Login">
                     <form className={classes.form} onSubmit={this.loginUser}>
                         <FormControl margin="normal" required fullWidth>
                             <InputLabel htmlFor="email">
@@ -105,8 +105,9 @@ class Login extends React.Component {
                         <div>
                             <p>
                                 <strong>
-                                    That email address or password isn't recognized.
-                                    Please try again or register now.
+                                    That email address or password isn't
+                                    recognized. Please try again or register
+                                    now.
                                 </strong>
                             </p>
                         </div>

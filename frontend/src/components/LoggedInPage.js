@@ -13,10 +13,10 @@ import MenuIcon from '@material-ui/icons/Menu'
 import classNames from 'classnames'
 import React from 'react'
 import DrawerList from './DrawerList'
-import MenuItem from "@material-ui/core/MenuItem";
-import Menu from "@material-ui/core/Menu";
-import {Link} from "react-router-dom";
-import withCurrentUser from "../containers/withCurrentUser";
+import MenuItem from '@material-ui/core/MenuItem'
+import Menu from '@material-ui/core/Menu'
+import { Link } from 'react-router-dom'
+import withCurrentUser from '../containers/withCurrentUser'
 
 const drawerWidth = 260
 
@@ -81,7 +81,7 @@ const styles = theme => ({
     },
     appBarSpacer: theme.mixins.toolbar,
     profileButtonText: {
-        marginRight: theme.spacing(1)
+        marginRight: theme.spacing(1),
     },
     content: {
         flexGrow: 1,
@@ -98,11 +98,11 @@ class LoggedInPage extends React.Component {
     }
 
     handleDrawerOpen = () => {
-        this.setState({drawerOpen: true})
+        this.setState({ drawerOpen: true })
     }
 
     handleDrawerClose = () => {
-        this.setState({drawerOpen: false})
+        this.setState({ drawerOpen: false })
     }
 
     onLogout = e => {
@@ -111,19 +111,19 @@ class LoggedInPage extends React.Component {
     }
 
     handleMenu = event => {
-        this.setState({anchorElement: event.currentTarget});
+        this.setState({ anchorElement: event.currentTarget })
     }
 
     handleClose = () => {
-        this.setState({anchorElement: null});
+        this.setState({ anchorElement: null })
     }
 
     render() {
-        const {classes} = this.props
+        const { classes } = this.props
 
         return (
             <div className={classes.root}>
-                <CssBaseline/>
+                <CssBaseline />
                 <AppBar
                     position="absolute"
                     className={classNames(
@@ -142,10 +142,10 @@ class LoggedInPage extends React.Component {
                             className={classNames(
                                 classes.menuButton,
                                 this.state.drawerOpen &&
-                                classes.menuButtonHidden
+                                    classes.menuButtonHidden
                             )}
                         >
-                            <MenuIcon/>
+                            <MenuIcon />
                         </IconButton>
                         <Typography
                             component="h1"
@@ -158,15 +158,21 @@ class LoggedInPage extends React.Component {
                         </Typography>
                         <>
                             <Button
-                                aria-owns={this.state.anchorElement ? 'menu-appbar' : undefined}
+                                aria-owns={
+                                    this.state.anchorElement
+                                        ? 'menu-appbar'
+                                        : undefined
+                                }
                                 aria-haspopup="true"
                                 onClick={this.handleMenu}
                                 color="inherit"
                             >
                                 <span className={classes.profileButtonText}>
-                                    {this.props.currentUser.loaded ? this.props.currentUser.user.firstName : undefined}
+                                    {this.props.currentUser.loaded
+                                        ? this.props.currentUser.user.firstName
+                                        : undefined}
                                 </span>
-                                <AccountCircleIcon/>
+                                <AccountCircleIcon />
                             </Button>
                             <Menu
                                 id="menu-appbar"
@@ -182,8 +188,12 @@ class LoggedInPage extends React.Component {
                                 open={Boolean(this.state.anchorElement)}
                                 onClose={this.handleClose}
                             >
-                                <MenuItem component={Link} to='/profile'>Profile</MenuItem>
-                                <MenuItem onClick={this.onLogout}>Logout</MenuItem>
+                                <MenuItem component={Link} to="/profile">
+                                    Profile
+                                </MenuItem>
+                                <MenuItem onClick={this.onLogout}>
+                                    Logout
+                                </MenuItem>
                             </Menu>
                         </>
                     </Toolbar>
@@ -200,14 +210,14 @@ class LoggedInPage extends React.Component {
                 >
                     <div className={classes.toolbarIcon}>
                         <IconButton onClick={this.handleDrawerClose}>
-                            <ChevronLeftIcon/>
+                            <ChevronLeftIcon />
                         </IconButton>
                     </div>
-                    <Divider/>
-                    <DrawerList/>
+                    <Divider />
+                    <DrawerList />
                 </Drawer>
                 <main className={classes.content}>
-                    <div className={classes.appBarSpacer}/>
+                    <div className={classes.appBarSpacer} />
                     {this.props.children}
                 </main>
             </div>

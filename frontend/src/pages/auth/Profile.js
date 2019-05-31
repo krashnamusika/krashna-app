@@ -1,10 +1,10 @@
 import React from 'react'
 import LoggedInPage from '../../components/LoggedInPage'
-import FormControl from "@material-ui/core/FormControl/index";
-import InputLabel from "@material-ui/core/InputLabel/index";
-import Input from "@material-ui/core/Input/index";
-import Button from "@material-ui/core/Button/index";
-import axios from "axios/index";
+import FormControl from '@material-ui/core/FormControl/index'
+import InputLabel from '@material-ui/core/InputLabel/index'
+import Input from '@material-ui/core/Input/index'
+import Button from '@material-ui/core/Button/index'
+import axios from 'axios/index'
 import withStyles from '@material-ui/core/styles/withStyles'
 
 const styles = theme => ({
@@ -38,9 +38,13 @@ class Profile extends React.Component {
         e.preventDefault()
 
         axios
-            .post('/api/auth/update-password', {
-                password: this.state.password,
-            }, {headers: {Authorization: localStorage.JWT}})
+            .post(
+                '/api/auth/update-password',
+                {
+                    password: this.state.password,
+                },
+                { headers: { Authorization: localStorage.JWT } }
+            )
             .then(() => {
                 this.setState({
                     updated: true,
@@ -57,11 +61,14 @@ class Profile extends React.Component {
 
     render() {
         const classes = this.props.classes
-        const {error, updated} = this.state
+        const { error, updated } = this.state
 
         return (
             <LoggedInPage title="Profile">
-                <form className={classes.updatePasswordForm} onSubmit={this.updatePassword}>
+                <form
+                    className={classes.updatePasswordForm}
+                    onSubmit={this.updatePassword}
+                >
                     <FormControl margin="normal" required fullWidth>
                         <InputLabel htmlFor="password">New password</InputLabel>
                         <Input
@@ -83,15 +90,12 @@ class Profile extends React.Component {
                     </Button>
                     {error && (
                         <p>
-                            Something went wrong while updating your password! Try logging out and logging in again, or
-                            contact the admins for assistance.
+                            Something went wrong while updating your password!
+                            Try logging out and logging in again, or contact the
+                            admins for assistance.
                         </p>
                     )}
-                    {updated && (
-                        <p>
-                            Password updated successfully!
-                        </p>
-                    )}
+                    {updated && <p>Password updated successfully!</p>}
                 </form>
             </LoggedInPage>
         )
